@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 class DonationForm(forms.ModelForm):
     class Meta:
         model = Donation
-        fields = "__all__"
+        fields = ['name', 'amount', 'photo']
         
         
 class SignupForm(UserCreationForm):

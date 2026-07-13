@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock title %}
+{% block content %}
+{% comment %} <div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    {% for forms in form %}
+
+    <div class="card w-8">
+
+      <figure>
+        <img src="{{ forms.photo.url }}" alt="donation image" class="w-24 h-30 object-cover">
+      </figure>
+
+      <div class="card-body">
+        <h2 class="card-title">{{ forms.name }}</h2>
+
+        <p class="text-lg font-semibold">
+          Amount: {{ forms.amount }}
+        </p>
+
+        <p class="text-sm text-gray-500">
+          ID: {{ forms.id }}
+        </p>
+
+        <div class="card-actions justify-end mt-2">
+          <a href="{% url 'edit' id=forms.id %}" class="btn btn-success">Edit</a>
+          <a href="{% url 'delete' id=forms.id %}" class="btn btn-danger">Delete</a>
+        </div>
+
+      </div>
+    </div>
+
+    {% endfor %}
+
+  </div> {% endcomment %}
+  <div class="row">
+
+    {% for forms in form %}
+
+    <div class="col-12 col-sm-6 col-md-4 mb-4">
+
+        <div class="card h-100">
+
+            <img src="{{ forms.photo.url }}"
+                 class="card-img-top"
+                 alt="Donation Image"
+                 style="height:250px; object-fit:cover;">
+
+            <div class="card-body d-flex flex-column">
+
+                <h5 class="card-title">{{ forms.name }}</h5>
+
+                <p>Amount: {{ forms.amount }}</p>
+
+                <p>ID: {{ forms.id }}</p>
+
+                <div class="mt-auto">
+                    <a href="{% url 'edit' id=forms.id %}" class="btn btn-success">Edit</a>
+                    <a href="{% url 'delete' id=forms.id %}" class="btn btn-danger">Delete</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<div>
+  <div class="text-center mt-20 px-4">
+    <h1 class="text-5xl font-bold text-gray-800">
+        Welcome to <span class="text-green-600">Eidgah Project</span>
+    </h1>
+
+    <p class="mt-4 text-gray-600 text-lg">
+        A Shimul khan management system built with Django + Tailwind
+    </p>
+
+    
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+    
+    
+</div>
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}CreateDonation{% endblock title %}
+{% block content %}
+    <!-- HERO SECTION -->
+
+
+<div>
+    <h1 class="text-success text-center mt-4">Enter Your Donation </h1>
+      <form method="POST" enctype="multipart/form-data" class="mt-4">
+        {% csrf_token %}
+        {{ form | crispy}}
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+{% endblock content %}
